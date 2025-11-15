@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agregar contacto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card" role="application" aria-labelledby="form-title">
+    <header>
+      <h1 id="form-title">Formulario para agregar contacto telefonico</h1>
+      <div class="progressbar" aria-hidden="true"><div class="progress" id="progress"></div></div>
+    </header>
+    <div class="content">
+      <main>
+        <form id="multiForm" novalidate>
+          <!-- Paso 1: Datos personales ------------------------------------------------------------>
+            <section class="step" data-step="0" aria-labelledby="paso1">
+                <h2 id="paso1">Datos personales</h2>
+                <div class="row">
+                    <div style="flex:1" class="field">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" required />
+                        <div class="error" data-for="nombre"></div>
+                    </div>
+                    <div style="flex:1" class="field">
+                        <label for="apellido">Apellidos</label>
+                        <input id="apellido" name="apellido" type="text" required />
+                        <div class="error" data-for="apellido"></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="Direccion">Direccion</label>
+                    <input id="Direccion" name="Direccion" type="text"/>
+                    <div class="error" data-for="Direccion"></div>
+                </div>
+            </section>
+
+          <!-- Paso 2: Contacto ---------------------------------------------------------------------->
+            <section class="step" data-step="1" aria-labelledby="paso2">
+                <h2 id="paso2">Informacion de contacto</h2>
+                <div class="field">
+                  <label for="email">Correo electronico</label>
+                  <input id="email" name="email" type="email" />
+                  <div class="error" data-for="email"></div>
+                </div>
+                <div class="field">
+                  <label for="telefono">Telefono</label>
+                  <input id="telefono" name="telefono" type="tel" placeholder="Ej: +18095556666" required/>
+                  <div class="error" data-for="telefono"></div>
+                </div>
+            </section>
+
+          <!-- Paso 3: Confirmación ---------------------------------------------------------------------------->
+            <section class="step" data-step="2" aria-labelledby="paso3">
+                <h2 id="paso3">Confirmación</h2>
+                <p>Revisa tus datos antes de enviar. Si necesitas cambiar algo, vuelve atrás.</p>
+                <div class="summary" id="summaryBox" aria-live="polite"></div>
+                <div class="qrResult" id="qrResult" aria-label="Código QR generado"></div>
+            </section>
+
+          <div class="actions" role="group" aria-label="Controles del formulario">
+            <button type="button" class="secondary" id="prevBtn">Atrás</button>
+            <button type="button" id="nextBtn">Siguiente</button>
+            <button type="submit" id="submitBtn" style="display:none;">Generar QR</button>
+          </div>
+        </form>
+      </main>
+      
+    </div>
+    <aside class="sidebar" aria-hidden="false">
+        <nav>
+          <ol class="steps" id="stepsList">
+            <li data-step="0"><span class="step-dot">1</span><span>Datos personales</span></li>
+            <li data-step="1"><span class="step-dot">2</span><span>Contactos</span></li>
+            <li data-step="2"><span class="step-dot">3</span><span>Confirmación</span></li>
+          </ol>
+        </nav>
+      </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><!-- libreria para generar codigo QR -->
+  <script src="script.js"></script>
+</body>
+</html>

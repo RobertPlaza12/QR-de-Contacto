@@ -1,0 +1,184 @@
+:root {
+  --accent: #256aeb;
+  --card: #ffffff;
+  --border: #eef2f7;
+  --text: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background:#090712;
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: var(--card);
+  max-width: 900px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
+  overflow: hidden;
+}
+
+header {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  order: -1;
+  border-right: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 10px 20px;
+}
+
+.steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.steps li {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.steps li:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.step-dot {
+  margin: 0 auto 6px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-dot.active {
+  background: var(--accent);
+  color: white;
+}
+
+main {
+  padding: 20px;
+}
+
+form .step {
+  display: none;
+}
+
+form .step.active {
+  display: block;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dbe7f5;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #af1e1e;
+}
+
+button.secondary {
+  background: #e6eefc;
+  color: var(--accent);
+}
+
+button.secondary:hover {
+  background: #dbeafe;
+}
+
+.summary {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
